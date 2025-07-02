@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Web Development Project</title>
+    <link rel="stylesheet" href="apex_t3.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">WebCraft Academy</h1>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#carousel" class="nav-link">Gallery</a></li>
+                <li><a href="#quiz" class="nav-link">Quiz</a></li>
+                <li><a href="#weather" class="nav-link">Weather</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Multi-Feature Web Application</h1>
+            <p>Carousel • Quiz System • API Dashboard</p>
+            <p>Explores frontend development concepts through an interactive image gallery,
+                test your knowledge with an interactive quiz, stay informed with live weather updates, 
+                discover fascinating random fun facts  featuring smooth transitions, user-controlled navigation, 
+                and responsive layouts optimized for mobile, tablet, and desktop viewing.</p>
+            </div>
+    </section>
+
+    
+    <!-- Image Carousel Section -->
+    <section id="carousel" class="carousel-section">
+        <div class="container">
+            <h2>Interactive Image Gallery</h2>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <div class="carousel-slide active">
+                            <img src="https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Nature 1">
+                            <div class="slide-content">
+                                <h3>Mobile-First Mindset</h3>
+                                <p>Modern web design in the palm of your hand</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Nature 2">
+                            <div class="slide-content">
+                                <h3>Design Meets Logic</h3>
+                                <p>Bridging creativity and functionality in web development</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://images.unsplash.com/photo-1472437774355-71ab6752b434?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Nature 3">
+                            <div class="slide-content">
+                                <h3>Code & Growth</h3>
+                                <p>Where web development meets natural inspiration</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://images.unsplash.com/photo-1669023414166-a4cc7c0fe1f5?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Nature 4">
+                            <div class="slide-content">
+                                <h3>Developer's Workspace</h3>
+                                <p>Binary dreams meet colorful code reality</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Nature 5">
+                            <div class="slide-content">
+                                <h3>Logic in Motion</h3>
+                                <p>Visualizing the flow of modern web development</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="carousel-btn prev-btn" id="prev-btn">&#8249;</button>
+                    <button class="carousel-btn next-btn" id="next-btn-carousel">&#8250;</button>
+                    
+                    <div class="carousel-indicators">
+                        <span class="indicator active" data-slide="0"></span>
+                        <span class="indicator" data-slide="1"></span>
+                        <span class="indicator" data-slide="2"></span>
+                        <span class="indicator" data-slide="3"></span>
+                        <span class="indicator" data-slide="4"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quiz" class="quiz-section">
+        <div class="container">
+            <h2>Frontend Developer Challenge</h2>
+            <div class="quiz-container">
+                <div id="quiz-start" class="quiz-start">
+                    <h3>Test Your JavaScript Skills!</h3>
+                    <p>Answer 5 questions about JavaScript fundamentals</p>
+                    <button id="start-quiz-btn" class="btn primary">Start Quiz</button>
+                </div>
+                <div id="quiz-game" class="quiz-game hidden">
+                    <div class="quiz-header">
+                        <div class="progress-bar">
+                            <div id="progress" class="progress"></div>
+                        </div>
+                        <span id="question-counter">Question 1 of 5</span>
+                    </div>                    
+                    <div class="quiz-content">
+                        <h3 id="question-text"></h3>
+                        <div id="answer-options" class="answer-options"></div>
+                    </div>                    
+                    <button id="next-btn" class="btn primary hidden">Next Question</button>
+                </div>
+                <div id="quiz-results" class="quiz-results hidden">
+                    <h3>Quiz Complete!</h3>
+                    <div id="score-display"></div>
+                    <div id="score-message"></div>
+                    <button id="restart-quiz-btn" class="btn primary">Take Quiz Again</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="weather" class="weather-section">
+        <div class="container">
+            <h2>Weather & Fun Facts</h2>
+            <div class="api-grid">
+                <div class="weather-widget">
+                    <h3>Current Weather</h3>
+                    <div class="location-input">
+                        <input type="text" id="city-input" placeholder="Enter city name...">
+                        <button id="get-weather-btn" class="btn secondary">Get Weather</button>
+                    </div>
+                    <div id="weather-display" class="weather-display">
+                        <div class="weather-info">
+                            <div id="weather-location">Enter a city to see weather</div>
+                            <div id="weather-temp"></div>
+                            <div id="weather-description"></div>
+                            <div id="weather-details"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="facts-widget">
+                    <h3>Random Fun Facts</h3>
+                    <div id="fact-display" class="fact-display">
+                        <p>Click the button to get an interesting fact!</p>
+                    </div>
+                    <button id="get-fact-btn" class="btn secondary">Get Random Fact</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Webcraft Academy.</p>
+        </div>
+    </footer>
+
+    <script src="apex_t3.js"></script>
+</body>
+</html>
